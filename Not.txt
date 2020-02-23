@@ -1,0 +1,84 @@
+if else yapisi
+	<p v-if="inventory > 10">In Stock</p>
+        <p v-else-if="inventory <= 10 && inventory > 0">Almost sold out!</p>
+        <p v-else>Out of Stock</p>
+
+v-show yapisi 
+	<p v-show="inStock">In Stock</p>
+	inStock true ise görünüyo yoksa display none yapiyor
+v-bind 
+        <img :src="image" alt="">
+
+var app = new Vue({
+    el: '#app',
+    data: {
+        product: 'Boots',
+        image: './Images/Greensock.jpg',
+        inventory: 10
+    }
+})
+
+Normal yapi 
+<h1>{{product}}</h1>
+
+
+v-for yapisi
+
+	<ul>
+        <li v-for='detail in details'>{{detail}}</li>
+        </ul>
+
+details: ["80% cotton", "20% polyester", "Gender-neutral"]
+------------------------------------------------------------------
+
+		<div v-for="variant in variants" :key="variant.variantId">
+                    <p>{{variant.variantColor}}</p>
+                </div>
+
+variants:[
+            {
+                variantiId: 2234,
+                variantColor: "green"
+            },
+            {
+                variantiId: 2235,
+                variantColor: "blue"
+            }
+        ]
+Click olayı
+
+<button v-on:click="cart +=1">Add to Cart</button>
+
+		<div class="cart">
+                    <p>Cart({{cart}})</p>
+                </div>
+
+cart:0
+
+fonksiyonla 
+
+methods: 
+<button v-on:click="addToCart">Add to Cart</button>
+
+{
+        addToCart : function ()
+        {
+            this.cart += 1
+        }
+    }
+
+uzerine gelince resim degisme
+
+
+updateProduct(variantImage)
+        {
+            this.image = variantImage
+        }
+
+<div v-for="variant in variants" 
+                :key="variant.variantId"
+                @mouseover="updateProduct(variant.variantImage)">
+                </div>
+
+
+

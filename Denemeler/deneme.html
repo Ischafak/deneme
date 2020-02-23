@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id='example-3'>
+  <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+  <label for="jack">Jack</label>
+  <input type="checkbox" id="john" value="John" v-model="checkedNames">
+  <label for="john">John</label>
+  <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
+  <label for="mike">Mike</label>
+  <br>
+  <span>Checked names: {{ checkedNames }}</span>
+
+
+<br><br>
+
+  <input type="radio" id="one" value="One" v-model="picked">
+  <label for="one">One</label>
+  <br>
+  <input type="radio" id="two" value="Two" v-model="picked">
+  <label for="two">Two</label>
+  <br>
+  <span>Picked: {{ picked }}</span>
+
+<br><br>
+
+<select v-model="selected">
+    <option disabled value="">Please select one</option>
+    <option>A</option>
+    <option>B</option>
+    <option>C</option>
+  </select>
+  <span>Selected: {{ selected }}</span>
+
+  <br><br>
+
+  <select v-model="selected2" multiple>
+    <option>A</option>
+    <option>B</option>
+    <option>C</option>
+  </select>
+  <br>
+  <span>Selected: {{ selected2 }}</span>
+
+  <br><br>
+
+  <select v-model="selected3">
+    <option v-for="option in options" v-bind:value="option.value">
+      {{ option.text }}
+    </option>
+  </select>
+  <span>Selected: {{ selected3 }}</span>
+
+  <br><br>
+
+  <!-- `picked` is a string "a" when checked -->
+<input type="radio" v-model="picked2" value="a">
+
+<!-- `toggle` is either true or false -->
+<input type="checkbox" v-model="toggle2">
+<p>{{toggle2}}</p>
+
+<!-- `selected` is a string "abc" when the first option is selected -->
+<select v-model="selected4">
+  <option value="abc">ABC</option>
+</select>
+
+
+<br><br>
+
+<input v-model.lazy="msg">
+<p>{{msg}}</p>
+
+<br><br>
+<input v-model.number="age" type="number">
+<p>{{age+1}}</p>
+
+<br><br>
+
+<input v-model.trim="msg2">
+<p>{{msg2}}</p>
+
+</div>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="main2.js"></script>
+</body>
+</html>
